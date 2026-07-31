@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/lib/data";
 import { FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,11 +57,10 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled
             ? "bg-white/80 dark:bg-[#0F172A]/80 backdrop-blur-xl shadow-lg shadow-black/5 border-b border-slate-200 dark:border-white/10"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
@@ -69,12 +69,7 @@ export default function Navbar() {
               onClick={() => scrollTo("#home")}
               className="flex items-center gap-2.5 group"
             >
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center shadow-md shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow">
-                <span className="text-white font-black text-base">N</span>
-              </div>
-              <span className="text-lg font-extrabold text-[#0F172A] dark:text-white tracking-tight">
-                NextGen<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500"> Tech</span>
-              </span>
+              <Image src="https://i.ibb.co.com/dsYMSjnW/Gemini-Generated-Image-weeyllweeyllweey.png" alt="Logo" width={50} height={50} />
             </button>
 
             {/* Desktop Nav Links */}
@@ -85,11 +80,10 @@ export default function Navbar() {
                   <button
                     key={link.href}
                     onClick={() => scrollTo(link.href)}
-                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                      isActive
+                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${isActive
                         ? "text-blue-600 dark:text-blue-400"
                         : "text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white"
-                    }`}
+                      }`}
                   >
                     {isActive && (
                       <motion.span
@@ -174,11 +168,10 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
                     onClick={() => scrollTo(link.href)}
-                    className={`text-left px-4 py-3 rounded-xl text-base font-medium transition-colors ${
-                      activeSection === link.href.replace("#", "")
+                    className={`text-left px-4 py-3 rounded-xl text-base font-medium transition-colors ${activeSection === link.href.replace("#", "")
                         ? "bg-blue-600/10 text-blue-600 dark:text-blue-400"
                         : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/10"
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </motion.button>

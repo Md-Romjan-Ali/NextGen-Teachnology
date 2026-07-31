@@ -12,6 +12,7 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validate = () => {
     const errs = {};
@@ -36,10 +37,22 @@ export default function Contact() {
       return;
     }
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
-    setForm({ name: "", email: "", company: "", subject: "", message: "" });
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to send message");
+      setSubmitted(true);
+      setForm({ name: "", email: "", company: "", subject: "", message: "" });
+    } catch (err) {
+      setSubmitError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle = (field) =>
@@ -172,6 +185,12 @@ export default function Contact() {
                   />
                   {errors.message && <p className="text-red-500 text-[10px] mt-1">{errors.message}</p>}
                 </div>
+
+                {submitError && (
+                  <p className="text-red-500 text-[11px] font-medium bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
+                    {submitError}
+                  </p>
+                )}
 
                 <button
                   type="submit"
