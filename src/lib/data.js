@@ -100,34 +100,21 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    name: "FinanceFlow Dashboard",
+    name: "A M I School",
     category: "Dashboard",
-    description: "A real-time financial analytics dashboard with interactive charts, KPI tracking, and AI-powered insights.",
-    shortDescription: "A real-time financial analytics dashboard with interactive charts, KPI tracking, and AI insights.",
-    features: [
-      "Interactive SVG charts and maps",
-      "Real-time financial API integration",
-      "AI-powered predictive cashflow insights"
-    ],
-    technologies: ["Next.js", "TypeScript", "Recharts", "Supabase"],
-    image: "/images/project1.jpg",
-    liveUrl: "https://financeflow.nextgentech.io",
-    githubUrl: "https://github.com/nextgentech/financeflow",
+    description: "A modern, scalable School Management System built with Next.js and modern web technologies. The goal of this project is to provide a complete digital solution for managing school operations, including students, teachers, admissions, notices, events, academic information, and administrative workflows.",
+    technologies: ["React.js", "Next.js", "JavaScript (ES6)", "Tailwind CSS", "Node.js", "Express.js", "Mongodb", "API"],
+    image: "https://i.ibb.co.com/XkyYjHk9/image.png",
+    liveUrl: "https://akher-mamud-ideal-school.vercel.app",
+    githubUrl: "https://github.com/Md-Romjan-Ali/Akher-Mamud-Ideac-School",
     color: "from-blue-600 to-cyan-500",
     company: "NextGen Technology",
-    keywords: ["NextJS", "TypeScript", "Recharts", "SaaS"]
   },
   {
     id: 2,
     name: "ShopVerse E-Commerce",
     category: "E-Commerce",
     description: "Feature-rich e-commerce platform with AI recommendations, multi-vendor support, and real-time inventory.",
-    shortDescription: "Feature-rich e-commerce platform with AI recommendations, multi-vendor support, and real-time inventory.",
-    features: [
-      "One-click Stripe checkout flow",
-      "Multi-vendor dashboard panel",
-      "AI recommendation engine"
-    ],
     technologies: ["React", "Node.js", "Stripe", "MongoDB"],
     image: "/images/project2.jpg",
     liveUrl: "https://shopverse.nextgentech.io",

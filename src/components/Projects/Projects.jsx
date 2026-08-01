@@ -14,6 +14,7 @@ import {
   TelegramShareButton,
   EmailShareButton,
 } from "react-share";
+import Image from "next/image";
 
 const filters = ["All", "Web", "Mobile", "Dashboard", "E-Commerce"];
 
@@ -40,11 +41,10 @@ export default function Projects() {
             <button
               key={filter}
               onClick={() => setActive(filter)}
-              className={`relative px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                active === filter
-                  ? "text-white shadow-md shadow-blue-500/20"
-                  : "text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10"
-              }`}
+              className={`relative px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${active === filter
+                ? "text-white shadow-md shadow-blue-500/20"
+                : "text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10"
+                }`}
             >
               {active === filter && (
                 <motion.span
@@ -78,13 +78,14 @@ export default function Projects() {
                 >
                   {/* Visual Placeholder for Project Image */}
                   <div className={`relative h-48 bg-gradient-to-br ${project.color} overflow-hidden`}>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-25">
-                      <div className="grid grid-cols-4 gap-2">
-                        {[...Array(12)].map((_, i) => (
-                          <div key={i} className="w-8 h-8 bg-white rounded-lg" />
-                        ))}
-                      </div>
-                    </div>
+
+                    <Image
+                      width={600}
+                      height={400}
+                      src={project.image}
+                      alt={project.name}
+                      className="absolute inset-0 w-full h-full object-cover object-center"
+                    />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-white/20 text-6xl font-black">{project.name[0]}</span>
                     </div>
@@ -117,7 +118,7 @@ export default function Projects() {
                       <h3 className="text-base font-bold text-slate-800 dark:text-white">
                         {project.name}
                       </h3>
-                      
+
                       {/* Social Share Menu */}
                       <div className="relative">
                         <button
