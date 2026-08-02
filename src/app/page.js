@@ -8,7 +8,6 @@ import Process from "@/components/Process/Process";
 import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs";
 import Team from "@/components/Team/Team";
 import Testimonials from "@/components/Testimonials/Testimonials";
-import Pricing from "@/components/Pricing/Pricing";
 import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
 import CTA from "@/components/CTA/CTA";
@@ -28,7 +27,6 @@ export default function Home() {
         <WhyChooseUs />
         <Team />
         <Testimonials />
-        <Pricing />
         <FAQ />
         <Contact />
         <CTA />

@@ -56,10 +56,9 @@ export default function Contact() {
   };
 
   const inputStyle = (field) =>
-    `w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border ${
-      errors[field]
-        ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/20"
-        : "border-slate-200 dark:border-white/10 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-blue-500/20"
+    `w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/5 border ${errors[field]
+      ? "border-red-500/50 focus:border-red-500 focus:ring-red-500/20"
+      : "border-slate-200 dark:border-white/10 focus:border-blue-500 dark:focus:border-blue-500 focus:ring-blue-500/20"
     } text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 text-xs focus:outline-none focus:ring-2 transition-all`;
 
   return (
@@ -153,27 +152,17 @@ export default function Contact() {
                     {errors.email && <p className="text-red-500 text-[10px] mt-1">{errors.email}</p>}
                   </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <input
-                      name="company"
-                      value={form.company}
-                      onChange={handleChange}
-                      placeholder="Company"
-                      className={inputStyle("company")}
-                    />
-                  </div>
-                  <div>
-                    <input
-                      name="subject"
-                      value={form.subject}
-                      onChange={handleChange}
-                      placeholder="Subject *"
-                      className={inputStyle("subject")}
-                    />
-                    {errors.subject && <p className="text-red-500 text-[10px] mt-1">{errors.subject}</p>}
-                  </div>
+                <div>
+                  <input
+                    name="subject"
+                    value={form.subject}
+                    onChange={handleChange}
+                    placeholder="Subject *"
+                    className={inputStyle("subject")}
+                  />
+                  {errors.subject && <p className="text-red-500 text-[10px] mt-1">{errors.subject}</p>}
                 </div>
+
                 <div>
                   <textarea
                     name="message"
@@ -216,7 +205,7 @@ export default function Contact() {
         {/* Google Map Embedded below */}
         <div className="mt-12 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 h-72">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0197!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1625000000000!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231402.9924706746!2d89.86511110101736!3d25.0112672140845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3757d7002bde43b1%3A0x240e07e89c3a8d92!2sAkher%20Mamud%20Bazar!5e0!3m2!1sen!2sbd!4v1785633670757!5m2!1sen!2sbd"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -225,6 +214,7 @@ export default function Contact() {
             referrerPolicy="no-referrer-when-downgrade"
             title="Office Location Map"
           />
+
         </div>
       </div>
     </section>

@@ -15,9 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "NextGen Technology - Transforming Ideas into Digital Solutions",
+  title: "NextGen Technology",
   description: "Specializing in premium web development, SaaS solutions, mobile applications, and creative UI/UX design.",
-  keywords: "NextGen Technology, Web Development, SaaS, UI/UX Design, App Development, Next.js",
   authors: [{ name: "NextGen Tech Team" }],
 };
 

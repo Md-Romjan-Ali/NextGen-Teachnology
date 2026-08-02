@@ -464,21 +464,21 @@ export const contactInfo = [
   {
     icon: "FiMapPin",
     label: "Address",
-    value: "123 Tech Avenue, Innovation District, San Francisco, CA 94105",
+    value: "Sherpur, Mymensingh, Bangladesh",
   },
   {
     icon: "FiPhone",
     label: "Phone",
-    value: "+1 (555) 123-4567",
+    value: "+88 1990211158",
   },
   {
     icon: "FiMail",
     label: "Email",
-    value: "hello@nextgentech.io",
+    value: "romjan.merndev@gmail.com",
   },
   {
     icon: "FiClock",
     label: "Working Hours",
-    value: "Mon – Fri: 9:00 AM – 6:00 PM PST",
+    value: "Sat – Thu: 9:00 AM – 6:00 PM",
   },
 ];
