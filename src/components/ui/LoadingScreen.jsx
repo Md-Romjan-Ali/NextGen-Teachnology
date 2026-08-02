@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "../Logo";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,16 +34,7 @@ export default function LoadingScreen() {
             transition={{ duration: 0.6, ease: "backOut" }}
             className="relative z-10 flex flex-col items-center gap-4"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center shadow-lg shadow-blue-500/40">
-                <span className="text-white font-black text-xl">N</span>
-              </div>
-              <div>
-                <h1 className="text-2xl font-extrabold text-white tracking-tight">
-                  NextGen<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400"> Technology</span>
-                </h1>
-              </div>
-            </div>
+            <Logo />
 
             {/* Progress bar */}
             <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden mt-4">
